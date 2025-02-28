@@ -133,7 +133,7 @@ REST_FRAMEWORK = {
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-ALLOWED_HOSTS = ['40.172.24.52']
+ALLOWED_HOSTS = ['40.172.119.92']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
