@@ -1,11 +1,13 @@
 from django.db import models
 
 class Book(models.Model):
+    # Fields for the Book model
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    isbn = models.CharField(max_length=13, unique=True)
-    page_count = models.PositiveIntegerField()
-    availability = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.title
+class Loan(models.Model):
+    # Fields for the Loan model
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    borrower_name = models.CharField(max_length=255)
+    loan_date = models.DateField()
+    return_date = models.DateField(null=True, blank=True)
