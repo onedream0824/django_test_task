@@ -6,14 +6,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'email', 'is_admin']
 
-
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-    fields = '__all__'
-
+        fields = '__all__'
 
 class LoanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Loan
-    fields = '__all__'
+        fields = '__all__'
