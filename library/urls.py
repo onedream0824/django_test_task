@@ -8,5 +8,7 @@ router.register(r'loans', LoanViewSet)
 
 urlpatterns = [
     path('register/', UserRegistrationView.as_view(), name='register'),
+    path('books/', BookViewSet.as_view(), name='books'),
+    path('loans/', LoanViewSet.as_view(), name='loans'),
     path('', include(router.urls)),
 ]
