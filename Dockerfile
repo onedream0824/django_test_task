@@ -1,18 +1,13 @@
-# Use Python 3.10 or higher
-FROM python:3.10-slim
+FROM python:3.9-slim
 
-# Set working directory
 WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy project
 COPY . .
 
-# Expose port
-EXPOSE 8000
-
-# Run the development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "library_management.wsgi"]
