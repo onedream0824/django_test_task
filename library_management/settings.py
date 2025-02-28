@@ -18,7 +18,14 @@ import os
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'db',  # Docker Compose service name
+        'NAME': 'library',
+        'USER': 'libraryuser',
+        'PASSWORD': 'password',
+        'PORT': '',  # Leave empty to use the default PostgreSQL port (5432)
+    }
 }
 
 
