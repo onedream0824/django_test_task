@@ -6,8 +6,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgres://libraryuser:password@db/library
-      - SECRET_KEY=django-insecure-99@d6nyx6$%*wytnuf8+v+35uzgqe^s0c)oi@k%66x2)ycg5yp
+      - DATABASE_URL='postgres://libraryuser:password@db/library'
+      - SECRET_KEY='django-insecure-99@d6nyx6$%*wytnuf8+v+35uzgqe^s0c)oi@k%66x2)ycg5yp'
     depends_on:
       - db
 
