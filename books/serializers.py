@@ -1,10 +1,5 @@
 from rest_framework import serializers
-from .models import User, Book, Loan
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'is_admin']
+from .models import Book, Loan
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
